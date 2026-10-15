@@ -1,0 +1,37 @@
+{
+  "JournalPins": {
+    "Settings": {
+      "EnableAnchorLinks": {
+        "Name": "Jump to journal headings",
+        "Hint": "Pins dragged from a journal's table of contents open the journal at that heading. Disabled automatically if JAL or D&D Beyond Importer is active."
+      },
+      "EnableDynamicIcons": {
+        "Name": "Auto-numbered pin icons",
+        "Hint": "Pins whose label starts with a short code get a round icon showing it, e.g. '1a. Strange Door' shows '1a'."
+      },
+      "EnableIconBorderRemoval": {
+        "Name": "Remove pin icon borders",
+        "Hint": "Draw pin icons without the dark background square. Disabled automatically if Backgroundless Pins or Pin Cushion is active."
+      },
+      "EnableContentPins": {
+        "Name": "Image and text pins",
+        "Hint": "Drag an image, or a selection of text, out of a journal page onto the map to make a pin that opens that image or jumps to that text."
+      }
+    },
+    "Labels": {
+      "JumpToAnchor": "Jump to Heading",
+      "DisableAutoIcon": "Disable auto icon",
+      "ShowIconBorder": "Show icon border",
+      "PinOpens": "Pin Opens",
+      "Image": "Image",
+      "ImageHint": "Double-clicking the pin opens this image instead of the journal.",
+      "Text": "Text passage",
+      "TextHint": "Double-clicking the pin opens the page and highlights this text.",
+      "ShareImage": "Show image to all players",
+      "ShareImageHint": "When the GM double-clicks the pin, the image is shown to every player too."
+    },
+    "Notifications": {
+      "TextNotFound": "Couldn't find the pinned text on this page. It may have been edited."
+    }
+  }
+}

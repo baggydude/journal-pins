@@ -1,0 +1,34 @@
+{
+  "id": "journal-pins",
+  "title": "Journal Pins",
+  "description": "Map pins that jump to journal headings, open inline journal images (optionally showing them to players), or jump to a selected passage of text. Includes auto-numbered pin icons and borderless pins. Based on Note Licker by MrPrimate.",
+  "version": "1.0.0",
+  "license": "LICENSE.md",
+  "compatibility": {
+    "minimum": "14",
+    "verified": "14"
+  },
+  "authors": [
+    {
+      "name": "baggy"
+    },
+    {
+      "name": "MrPrimate (original Note Licker)",
+      "url": "https://github.com/MrPrimate/NoteLicker"
+    }
+  ],
+  "esmodules": [
+    "scripts/main.mjs"
+  ],
+  "styles": [
+    "styles/journal-pins.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "persistentStorage": true
+}

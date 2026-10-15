@@ -1,0 +1,8 @@
+::highlight(journal-pins) {
+  background-color: rgba(255, 200, 0, 0.45);
+}
+
+.note-config .journal-pins-text {
+  min-height: 4em;
+  resize: vertical;
+}
