@@ -97,6 +97,19 @@ async function createPin(event, { x, y }, { uuid, label, slug, image, text }) {
   return layer._createPreview(noteData, { top: event.clientY - 20, left: event.clientX + 40 });
 }
 
+/**
+ * The image page behind a dropped journal link: an image page itself, or a journal entry whose only page is an image.
+ * Compendium links resolve to index entries without page data, so they are left to core.
+ * @returns {JournalEntryPage|undefined}
+ */
+function droppedImagePage(data) {
+  if ( !["JournalEntryPage", "JournalEntry"].includes(data.type) || !data.uuid ) return undefined;
+  const doc = fromUuidSync(data.uuid, { strict: false });
+  const page = (doc instanceof JournalEntry) && (doc.pages.size === 1) ? doc.pages.contents[0] : doc;
+  if ( !(page instanceof JournalEntryPage) || (page.type !== "image") || !page.src ) return undefined;
+  return page;
+}
+
 function onDropCanvasData(_canvas, data, event) {
   const raw = features.contentPins ? event?.dataTransfer?.getData(DRAG_MIME) : "";
   if ( raw ) {
@@ -112,6 +125,12 @@ function onDropCanvasData(_canvas, data, event) {
   // Headings dragged from a journal's table of contents.
   if ( features.anchorLinks && (data.type === "JournalEntryPage") && data.anchor?.slug ) {
     createPin(event, data, { uuid: data.uuid, slug: data.anchor.slug, label: data.anchor.name });
+    return false;
+  }
+  // Links to image pages (handouts) make image pins, the same as dragging the picture out of the open page.
+  const imagePage = features.contentPins ? droppedImagePage(data) : undefined;
+  if ( imagePage ) {
+    createPin(event, data, { uuid: imagePage.uuid, image: imagePage.src, label: imagePage.name });
     return false;
   }
 }
