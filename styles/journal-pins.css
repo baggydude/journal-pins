@@ -2,6 +2,21 @@
   background-color: rgba(255, 200, 0, 0.45);
 }
 
+/* A page popped out into its own window scrolls like a journal's page view */
+.journal-pins-popout .window-content {
+  padding: 0;
+  overflow: hidden;
+}
+
+.journal-pins-popout .journal-entry-content {
+  height: 100%;
+}
+
+.journal-pins-popout .journal-entry-pages {
+  flex: 1;
+  overflow-y: auto;
+}
+
 .note-config .journal-pins-text {
   min-height: 4em;
   resize: vertical;

@@ -16,7 +16,15 @@
       "EnableContentPins": {
         "Name": "Image and text pins",
         "Hint": "Drag an image, or a selection of text, out of a journal page onto the map to make a pin that opens that image or jumps to that text."
+      },
+      "EnablePagePopout": {
+        "Name": "Pop out journal pages",
+        "Hint": "Open a single journal page in its own window, from the page list's right-click menu or the journal's header menu. Links clicked in it open in the journal, so the page stays open beside it. Disabled automatically if Journal Page Popout is active."
       }
+    },
+    "PopOut": {
+      "Label": "Pop Out",
+      "Current": "Pop Out Page"
     },
     "Labels": {
       "JumpToAnchor": "Jump to Heading",
@@ -31,7 +39,8 @@
       "ShareImageHint": "When the GM double-clicks the pin, the image is shown to every player too."
     },
     "Notifications": {
-      "TextNotFound": "Couldn't find the pinned text on this page. It may have been edited."
+      "TextNotFound": "Couldn't find the pinned text on this page. It may have been edited.",
+      "PopOutUnsupported": "This kind of page can't be popped out."
     }
   }
 }

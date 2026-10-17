@@ -10,7 +10,8 @@ export const SETTINGS = {
   ANCHOR_LINKS: "enable-anchor-links",
   DYNAMIC_ICONS: "enable-dynamic-icons",
   ICON_BORDER_REMOVAL: "enable-icon-border-removal",
-  CONTENT_PINS: "enable-content-pins"
+  CONTENT_PINS: "enable-content-pins",
+  PAGE_POPOUT: "enable-page-popout"
 };
 
 /** Leading words that should never become an auto icon. */

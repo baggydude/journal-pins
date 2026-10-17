@@ -1,6 +1,7 @@
 import { DRAG_MIME, MODULE_ID } from "./constants.mjs";
 import { features } from "./settings.mjs";
 import { getImage, getShareImage, getSlug, getText } from "./flags.mjs";
+import { PagePopout } from "./page-popout.mjs";
 
 const HIGHLIGHT_NAME = MODULE_ID;
 const HIGHLIGHT_DURATION = 10000;
@@ -22,14 +23,15 @@ function imageLabel(img) {
 }
 
 /**
- * Find the journal page a drag started in. Only pages shown in a journal's normal reading view count; page
- * editors are separate windows and keep their usual drag behaviour.
+ * Find the journal page a drag started in. Only pages shown in a journal's normal reading view, or popped out
+ * into their own window, count; page editors are separate windows and keep their usual drag behaviour.
  * @returns {JournalEntryPage|undefined}
  */
 function pageForElement(element) {
   const pageElement = element.closest(".journal-entry-page[data-page-id]");
   if ( !pageElement ) return undefined;
   const app = foundry.applications.instances.get(pageElement.closest(".application")?.id);
+  if ( app instanceof PagePopout ) return app.page;
   if ( !(app instanceof foundry.applications.sheets.journal.JournalEntrySheet) ) return undefined;
   return app.document.pages.get(pageElement.dataset.pageId);
 }

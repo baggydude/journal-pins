@@ -2,3 +2,6 @@
 *.zip
 .DS_Store
 Thumbs.db
+
+# Generated pin icons (cached per world)
+storage/*.svg

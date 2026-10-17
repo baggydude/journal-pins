@@ -4,7 +4,8 @@ const DEFINITIONS = {
   [SETTINGS.ANCHOR_LINKS]: { key: "EnableAnchorLinks", default: true },
   [SETTINGS.DYNAMIC_ICONS]: { key: "EnableDynamicIcons", default: true },
   [SETTINGS.ICON_BORDER_REMOVAL]: { key: "EnableIconBorderRemoval", default: false },
-  [SETTINGS.CONTENT_PINS]: { key: "EnableContentPins", default: true }
+  [SETTINGS.CONTENT_PINS]: { key: "EnableContentPins", default: true },
+  [SETTINGS.PAGE_POPOUT]: { key: "EnablePagePopout", default: true }
 };
 
 export function registerSettings() {
@@ -42,5 +43,9 @@ export const features = {
   },
   get contentPins() {
     return setting(SETTINGS.CONTENT_PINS);
+  },
+  get pagePopout() {
+    return setting(SETTINGS.PAGE_POPOUT)
+      && !game.modules.get("journal-page-popout")?.active;
   }
 };
